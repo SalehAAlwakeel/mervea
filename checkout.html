@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Checkout — MERVÉA Body Rituals</title>
+    <link rel="icon" href="images/logo.png" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="page-wipe" id="page-wipe" aria-hidden="true"><span></span><span></span><span></span></div>
+
+    <header class="site-header is-light" data-on-dark="false">
+      <a class="brand-mark" href="index.html" data-link>
+        <strong>MERVÉA</strong>
+        <small>Body Rituals</small>
+      </a>
+      <div class="header-actions">
+        <button class="cart-btn" id="open-cart" type="button" aria-label="Open bag">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/></svg>
+          <span class="cart-count" hidden>0</span>
+        </button>
+        <button class="nav-toggle" id="nav-toggle" type="button"><span></span></button>
+      </div>
+    </header>
+
+    <nav class="menu-overlay" id="menu-overlay">
+      <div class="menu-links">
+        <a href="index.html" data-link>Home</a>
+        <a href="shop.html" data-link>Shop</a>
+        <a href="about.html" data-link>The Ritual</a>
+        <a href="contact.html" data-link>Contact</a>
+        <a href="checkout.html" data-link>Checkout</a>
+      </div>
+      <aside class="menu-aside">
+        <p>Complete your ritual.</p>
+      </aside>
+    </nav>
+
+    <div class="cart-backdrop" id="cart-backdrop"></div>
+    <aside class="cart-drawer" id="cart-drawer">
+      <div class="cart-head">
+        <h2 class="serif">Your bag</h2>
+        <button type="button" id="close-cart">Close</button>
+      </div>
+      <div class="cart-items" id="cart-items"></div>
+      <div class="cart-foot">
+        <div class="cart-total"><span>Total</span><strong id="cart-total">$0</strong></div>
+        <a class="btn btn-primary" href="checkout.html" data-link style="width:100%;justify-content:center">Checkout <span class="arrow">→</span></a>
+      </div>
+    </aside>
+
+    <main class="checkout">
+      <div class="star-field" id="page-stars"></div>
+      <div class="container">
+        <p class="eyebrow reveal">Checkout</p>
+        <h1 class="serif reveal" style="font-size:clamp(2.6rem,6vw,4.6rem);margin:8px 0 36px">Ship the glow.</h1>
+        <div class="checkout-grid" id="checkout-grid">
+          <form class="form-card reveal" id="checkout-form" name="order" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="order" />
+            <p class="hp"><label>Leave empty <input name="bot-field" /></label></p>
+            <div class="field">
+              <label for="cname">Full name</label>
+              <input id="cname" name="name" required />
+            </div>
+            <div class="field">
+              <label for="cemail">Email</label>
+              <input id="cemail" name="email" type="email" required />
+            </div>
+            <div class="field">
+              <label for="cphone">Phone</label>
+              <input id="cphone" name="phone" type="tel" required />
+            </div>
+            <div class="field">
+              <label for="caddress">Address</label>
+              <input id="caddress" name="address" required />
+            </div>
+            <div class="pair-fields">
+              <div class="field">
+                <label for="ccity">City</label>
+                <input id="ccity" name="city" required />
+              </div>
+              <div class="field">
+                <label for="cpost">Postcode</label>
+                <input id="cpost" name="postcode" required />
+              </div>
+            </div>
+            <div class="field">
+              <label for="cnote">Note for MERVÉA</label>
+              <textarea id="cnote" name="note" placeholder="Gift wrap, scent preference, delivery note…"></textarea>
+            </div>
+            <button class="btn btn-primary" type="submit">Place order <span class="arrow">→</span></button>
+          </form>
+
+          <aside class="summary-box reveal">
+            <p class="eyebrow">Your ritual</p>
+            <div id="checkout-items"></div>
+            <div class="cart-total" style="margin-top:20px">
+              <span>Total</span>
+              <strong class="price" id="checkout-total">$0</strong>
+            </div>
+            <p style="font-size:.85rem;color:var(--ink-soft);margin-top:12px">
+              Orders are confirmed by WhatsApp or email. Payment on confirmation — Stripe can be connected when you are ready.
+            </p>
+          </aside>
+        </div>
+
+        <div class="form-success" id="order-success" hidden>
+          <div class="burst">✦ ✦ ✦</div>
+          <h2 class="serif" style="font-size:2.8rem;margin:12px 0">Order received.</h2>
+          <p>Reference <strong id="order-id"></strong></p>
+          <p style="color:var(--ink-soft);margin:12px 0 24px">Send the same details on WhatsApp to confirm and arrange payment.</p>
+          <a class="btn btn-primary" id="whatsapp-order" href="#" target="_blank" rel="noopener">Confirm on WhatsApp <span class="arrow">→</span></a>
+          <a class="btn btn-line" href="shop.html" data-link style="margin-left:10px">Keep shopping</a>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-bottom">
+          <span>© 2026 MERVÉA Body Rituals</span>
+          <span>Polish. Nourish. Glow.</span>
+        </div>
+      </div>
+    </footer>
+    <script src="js/products.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

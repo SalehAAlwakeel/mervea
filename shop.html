@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Shop — MERVÉA Body Rituals</title>
+    <link rel="icon" href="images/logo.png" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="page-wipe" id="page-wipe" aria-hidden="true"><span></span><span></span><span></span></div>
+
+    <header class="site-header is-light" data-on-dark="false">
+      <a class="brand-mark" href="index.html" data-link>
+        <strong>MERVÉA</strong>
+        <small>Body Rituals</small>
+      </a>
+      <div class="header-actions">
+        <button class="cart-btn" id="open-cart" type="button" aria-label="Open bag">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/></svg>
+          <span class="cart-count" hidden>0</span>
+        </button>
+        <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Open menu"><span></span></button>
+      </div>
+    </header>
+
+    <nav class="menu-overlay" id="menu-overlay">
+      <div class="menu-links">
+        <a href="index.html" data-link>Home</a>
+        <a href="shop.html" data-link>Shop</a>
+        <a href="about.html" data-link>The Ritual</a>
+        <a href="contact.html" data-link>Contact</a>
+        <a href="checkout.html" data-link>Checkout</a>
+      </div>
+      <aside class="menu-aside">
+        <p class="eyebrow">The collection</p>
+        <p>Scrubs, butters, soap, and glow oil — 100% natural, made for all skin types.</p>
+      </aside>
+    </nav>
+
+    <div class="cart-backdrop" id="cart-backdrop"></div>
+    <aside class="cart-drawer" id="cart-drawer">
+      <div class="cart-head">
+        <h2 class="serif">Your bag</h2>
+        <button type="button" id="close-cart">Close</button>
+      </div>
+      <div class="cart-items" id="cart-items"></div>
+      <div class="cart-foot">
+        <div class="cart-total"><span>Total</span><strong id="cart-total">$0</strong></div>
+        <a class="btn btn-primary" href="checkout.html" data-link style="width:100%;justify-content:center">Checkout <span class="arrow">→</span></a>
+      </div>
+    </aside>
+
+    <main>
+      <section class="page-hero">
+        <div class="star-field" id="page-stars"></div>
+        <div class="container reveal">
+          <p class="eyebrow">Shop</p>
+          <h1>Choose your ritual.</h1>
+          <p style="max-width:480px;color:var(--ink-soft);margin-top:16px">
+            Four hibiscus rituals, handmade for healthy-looking skin. Filter by category, add to your bag, and glow.
+          </p>
+        </div>
+      </section>
+      <section class="section" style="padding-top:0">
+        <div class="container">
+          <div class="filters">
+            <button class="filter-btn is-active" data-filter="all" type="button">All</button>
+            <button class="filter-btn" data-filter="scrubs" type="button">Body Scrubs</button>
+            <button class="filter-btn" data-filter="butters" type="button">Body Butters</button>
+            <button class="filter-btn" data-filter="soap" type="button">Body Soap</button>
+            <button class="filter-btn" data-filter="oil" type="button">Glow Oil</button>
+          </div>
+          <div class="product-grid" id="shop-grid"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <div class="footer-brand">MERVÉA</div>
+            <p style="margin-top:12px;color:rgba(253,233,227,.7)">100% natural body rituals.</p>
+          </div>
+          <div>
+            <p><a href="index.html" data-link>Home</a></p>
+            <p><a href="about.html" data-link>The Ritual</a></p>
+            <p><a href="contact.html" data-link>Contact</a></p>
+          </div>
+          <div>
+            <p><a href="shop.html?category=scrubs" data-link>Body Scrubs</a></p>
+            <p><a href="shop.html?category=butters" data-link>Body Butters</a></p>
+            <p><a href="shop.html?category=soap" data-link>Body Soap</a></p>
+            <p><a href="shop.html?category=oil" data-link>Glow Oil</a></p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 MERVÉA Body Rituals</span>
+          <span>Polish. Nourish. Glow.</span>
+        </div>
+      </div>
+    </footer>
+    <script src="js/products.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
