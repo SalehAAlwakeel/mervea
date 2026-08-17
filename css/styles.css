@@ -622,6 +622,7 @@ main,
 /* Why MERVÉA — full-page photo */
 .why-page {
   min-height: 100vh;
+  min-height: 100svh;
   position: relative;
   display: flex;
   align-items: flex-start;
@@ -637,7 +638,7 @@ main,
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center 70%;
 }
 
 .why-page::before {
@@ -1631,6 +1632,10 @@ main,
 
   .why-page {
     min-height: 100svh;
+  }
+
+  .why-photo {
+    object-position: center 75%;
   }
 
   .why-copy {

@@ -5,3 +5,6 @@ Thumbs.db
 .vscode
 scripts/__pycache__/
 *.pyc
+
+# Local Netlify folder
+.netlify
