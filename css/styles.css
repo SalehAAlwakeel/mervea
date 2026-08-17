@@ -1314,6 +1314,36 @@ main,
   top: 110px;
 }
 
+.pay-box {
+  margin-top: 22px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(42, 26, 20, 0.08);
+}
+
+.pay-box p {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.pay-bank {
+  font-family: "Playfair Display", serif;
+  font-size: 1.2rem;
+  color: var(--ink) !important;
+  margin: 12px 0 4px !important;
+}
+
+.pay-iban {
+  font-size: 0.95rem !important;
+  letter-spacing: 0.04em;
+  color: var(--ink) !important;
+  word-break: break-word;
+}
+
+.pay-box .btn {
+  margin-top: 12px;
+}
+
 .pair-fields {
   display: grid;
   grid-template-columns: 1fr 1fr;

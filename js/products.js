@@ -1,6 +1,9 @@
 const STORE = {
   whatsapp: "966501414422",
   email: "hello.mervea@gmail.com",
+  bank: "Al Rajhi Bank",
+  iban: "SA1180000501608016015772",
+  ibanDisplay: "SA11 8000 0501 6080 1601 5772",
 };
 
 const PRODUCTS = [

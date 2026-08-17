@@ -89,7 +89,7 @@
               <label for="cnote">Note for MERVÉA</label>
               <textarea id="cnote" name="note" placeholder="Gift wrap, scent preference, delivery note…"></textarea>
             </div>
-            <button class="btn btn-primary" type="submit">Place order <span class="arrow">→</span></button>
+            <button class="btn btn-primary" type="submit">Order on WhatsApp <span class="arrow">→</span></button>
           </form>
 
           <aside class="summary-box reveal">
@@ -99,18 +99,26 @@
               <span>Total</span>
               <strong class="price" id="checkout-total">$0</strong>
             </div>
-            <p style="font-size:.85rem;color:var(--ink-soft);margin-top:12px">
-              Orders are confirmed by WhatsApp or email. Payment on confirmation — Stripe can be connected when you are ready.
-            </p>
+            <div class="pay-box">
+              <p class="eyebrow">How to order</p>
+              <p>Orders are placed on <strong>WhatsApp</strong> only. Transfer the total, then send your receipt on WhatsApp.</p>
+              <p class="pay-bank">Al Rajhi Bank</p>
+              <p class="pay-iban" id="iban-copy">SA11 8000 0501 6080 1601 5772</p>
+              <button class="btn btn-line" type="button" id="copy-iban">Copy IBAN</button>
+            </div>
           </aside>
         </div>
 
         <div class="form-success" id="order-success" hidden>
           <div class="burst">✦ ✦ ✦</div>
-          <h2 class="serif" style="font-size:2.8rem;margin:12px 0">Order received.</h2>
+          <h2 class="serif" style="font-size:2.8rem;margin:12px 0">Send it on WhatsApp.</h2>
           <p>Reference <strong id="order-id"></strong></p>
-          <p style="color:var(--ink-soft);margin:12px 0 24px">Send the same details on WhatsApp to confirm and arrange payment.</p>
-          <a class="btn btn-primary" id="whatsapp-order" href="#" target="_blank" rel="noopener">Confirm on WhatsApp <span class="arrow">→</span></a>
+          <div class="pay-box" style="max-width:420px;margin:20px auto">
+            <p class="pay-bank">Al Rajhi Bank</p>
+            <p class="pay-iban">SA11 8000 0501 6080 1601 5772</p>
+            <p style="color:var(--ink-soft);margin-top:8px">Transfer the total, then send the receipt with your order.</p>
+          </div>
+          <a class="btn btn-primary" id="whatsapp-order" href="#" target="_blank" rel="noopener">Open WhatsApp <span class="arrow">→</span></a>
           <a class="btn btn-line" href="shop.html" data-link style="margin-left:10px">Keep shopping</a>
         </div>
       </div>

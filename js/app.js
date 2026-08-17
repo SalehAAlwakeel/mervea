@@ -390,7 +390,26 @@ function renderCheckout() {
       items: orderLines,
       total: money(cartTotal()),
     });
-    const message = `New MERVÉA order ${orderId}%0A${data.name}%0A${data.email}%0A${data.phone}%0A${data.address}, ${data.city} ${data.postcode}%0A%0A${lines}%0A%0ATotal ${money(cartTotal())}%0ANote: ${data.note || "—"}`;
+    const message = [
+      `New MERVÉA WhatsApp order ${orderId}`,
+      data.name,
+      data.email,
+      data.phone,
+      `${data.address}, ${data.city} ${data.postcode}`,
+      "",
+      orderLines,
+      "",
+      `Total ${money(cartTotal())}`,
+      `Note: ${data.note || "—"}`,
+      "",
+      "Payment: bank transfer",
+      `Bank: ${STORE.bank}`,
+      `IBAN: ${STORE.ibanDisplay}`,
+      "I will send the transfer receipt here.",
+    ].join("\n");
+    const encoded = encodeURIComponent(message);
+    const phone = (STORE.whatsapp || "").replace(/\D/g, "");
+    const waLink = phone ? `https://wa.me/${phone}?text=${encoded}` : `https://wa.me/?text=${encoded}`;
     localStorage.setItem(
       "mervea-last-order",
       JSON.stringify({ orderId, data, items: getCart(), total: cartTotal() })
@@ -403,9 +422,16 @@ function renderCheckout() {
     success.hidden = false;
     $("#order-id").textContent = orderId;
     const wa = $("#whatsapp-order");
-    if (wa) {
-      const phone = (STORE.whatsapp || "").replace(/\D/g, "");
-      wa.href = phone ? `https://wa.me/${phone}?text=${message}` : `https://wa.me/?text=${message}`;
+    if (wa) wa.href = waLink;
+    window.open(waLink, "_blank", "noopener");
+  });
+
+  $("#copy-iban")?.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(STORE.iban || STORE.ibanDisplay);
+      toast("IBAN copied");
+    } catch {
+      toast(STORE.ibanDisplay);
     }
   });
 }
